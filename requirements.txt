@@ -1,6 +1,9 @@
 # AI 全栈开发快速入门指南依赖包
 # Python 版本：3.13
 
+# 安装jupyterlab环境
+jupyterlab
+
 # DeepSeek API 和 OpenAI SDK
 openai==1.82.0
 
@@ -19,3 +22,4 @@ pymilvus[model]==2.5.10
 torch==2.7.0
 # CPU版本
 # torch==2.7.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+

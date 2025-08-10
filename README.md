@@ -119,8 +119,44 @@ pip install -r requirements.txt
 
 根据你使用的命令行工具，在 `~/.bashrc` 或 `~/.zshrc` 中配置 `DEEPSEEK_API_KEY` 环境变量：
 
+#### Linux
 ```shell
 export DEEPSEEK_API_KEY="xxxx"
+```
+
+#### Windows
+```
+set DEEPSEEK_API_KEY="xxxx"
+```
+如果是在jupyterlab启动后才设置的环境变量，如下方法重启kernel
+
+- 点击 VSCode 窗口顶部的 kernel 名称（通常显示在右上角的 Python 版本或虚拟环境名）。
+
+- 在弹出的菜单中，选择 Restart Kernel。
+在windows系统下测试上面方法要重启电脑才能生效
+
+#### 通用方法
+加载 .env 文件中的环境变量
+如果你希望从 .env 文件中加载环境变量，可以使用 python-dotenv 库。这是处理环境变量的一种常见方式，尤其是在开发和本地测试时。
+
+安装 python-dotenv：
+```bash
+pip install python-dotenv
+```
+创建 .env 文件：
+在项目根目录下创建一个 .env 文件，内容如下：
+DEEPSEEK_API_KEY=your_api_key_here
+
+在 Python 中加载 .env 文件：
+```python
+from dotenv import load_dotenv
+import os
+# 加载 .env 文件中的环境变量
+
+load_dotenv()
+
+# 获取环境变量的值
+api_key = os.getenv("DEEPSEEK_API_KEY")
 ```
 
 ### 安装和配置 Jupyter Lab
